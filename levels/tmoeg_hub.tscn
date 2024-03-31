@@ -83,12 +83,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 0, -26)
 
 [node name="Portal" parent="Portals" instance=ExtResource("4_4kxqc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -31)
+url = "../world.gate"
 
 [node name="Portal2" parent="Portals" instance=ExtResource("4_4kxqc")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4, 0, -31)
-
-[node name="Portal3" parent="Portals" instance=ExtResource("4_4kxqc")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 38, 0, 8)
+url = "../thegatesjam.gate"
 
 [node name="Ground" type="StaticBody3D" parent="."]
 
