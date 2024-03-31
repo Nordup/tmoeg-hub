@@ -28,7 +28,7 @@ size = Vector3(0.7, 0.3, 0.5)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_2ooex"]
 dof_blur_far_enabled = true
-dof_blur_far_distance = 100.0
+dof_blur_far_distance = 140.0
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_s5n07"]
 
