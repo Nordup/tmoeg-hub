@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7cp4ix05yf7u"]
+
+[ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_nbp61"]
+[ext_resource type="Script" path="res://main/spawn_points.gd" id="2_dii6t"]
+[ext_resource type="PackedScene" uid="uid://bdvht85heque" path="res://addons/kenney_castle-kit/platform.glb" id="3_4xku4"]
+[ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="4_4kxqc"]
+[ext_resource type="PackedScene" uid="uid://ohgmnnpecqug" path="res://addons/kenney_castle-kit/ground.glb" id="5_qiyn4"]
+
+[node name="TmoegHub" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866024, -0.433016, 0.25, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_nbp61")
+
+[node name="SpawnPoints" type="Node3D" parent="."]
+script = ExtResource("2_dii6t")
+
+[node name="platform2" parent="SpawnPoints" instance=ExtResource("3_4xku4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 4, 4)
+
+[node name="platform3" parent="SpawnPoints" instance=ExtResource("3_4xku4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 8, -24)
+
+[node name="platform4" parent="SpawnPoints" instance=ExtResource("3_4xku4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4, 0)
+
+[node name="Portals" type="Node3D" parent="."]
+visible = false
+
+[node name="Portal" parent="Portals" instance=ExtResource("4_4kxqc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 8, -26)
+
+[node name="Portal2" parent="Portals" instance=ExtResource("4_4kxqc")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22, 4, -3)
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="ground2" parent="Ground" instance=ExtResource("5_qiyn4")]
+transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 0, 0, 0)
