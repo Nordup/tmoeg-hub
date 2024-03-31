@@ -1,10 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7cp4ix05yf7u"]
+[gd_scene load_steps=17 format=3 uid="uid://b7cp4ix05yf7u"]
 
 [ext_resource type="Environment" uid="uid://cgqlrwpgos8m3" path="res://defaults/world_environment.tres" id="1_nbp61"]
 [ext_resource type="Script" path="res://main/spawn_points.gd" id="2_dii6t"]
 [ext_resource type="PackedScene" uid="uid://bdvht85heque" path="res://addons/kenney_castle-kit/platform.glb" id="3_4xku4"]
 [ext_resource type="PackedScene" uid="uid://dykqq00uscsiy" path="res://levels/portal/portal.tscn" id="4_4kxqc"]
 [ext_resource type="PackedScene" uid="uid://ohgmnnpecqug" path="res://addons/kenney_castle-kit/ground.glb" id="5_qiyn4"]
+[ext_resource type="PackedScene" uid="uid://cfkcv7in54etn" path="res://addons/kenney_castle-kit/bridge-straight-pillar.glb" id="6_dwgkh"]
+[ext_resource type="PackedScene" uid="uid://lhi60abd86nf" path="res://addons/kenney_castle-kit/bridge-straight.glb" id="7_achdq"]
+[ext_resource type="PackedScene" uid="uid://chh335uxaip4f" path="res://addons/kenney_castle-kit/ground-hills.glb" id="8_poxbt"]
+[ext_resource type="PackedScene" uid="uid://chgoo0agk3nmh" path="res://addons/kenney_castle-kit/flag-banner-long.glb" id="9_2f0s5"]
+[ext_resource type="PackedScene" uid="uid://ckqfiq14njhcg" path="res://addons/kenney_castle-kit/siege-ballista.glb" id="9_4plih"]
+[ext_resource type="PackedScene" uid="uid://hwi8chdqsqr4" path="res://addons/kenney_castle-kit/tower-hexagon-mid.glb" id="10_kudaa"]
+[ext_resource type="PackedScene" uid="uid://cr1n5gn5r8w6s" path="res://addons/kenney_castle-kit/tower-hexagon-base.glb" id="11_axn8c"]
+[ext_resource type="PackedScene" uid="uid://dk10duq0kigto" path="res://addons/kenney_castle-kit/tower-hexagon-roof.glb" id="12_4lfrf"]
+[ext_resource type="PackedScene" uid="uid://x0btyxw02pek" path="res://addons/kenney_castle-kit/tower-hexagon-top.glb" id="13_ubaej"]
+[ext_resource type="PackedScene" uid="uid://bbsg3218pasjg" path="res://addons/kenney_castle-kit/tower-hexagon-top-wood.glb" id="14_qe4jf"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cictd"]
+size = Vector3(2400, 1, 2400)
 
 [node name="TmoegHub" type="Node3D"]
 
@@ -36,7 +49,43 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 8, -26)
 [node name="Portal2" parent="Portals" instance=ExtResource("4_4kxqc")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 22, 4, -3)
 
-[node name="Ground" type="Node3D" parent="."]
+[node name="Ground" type="StaticBody3D" parent="."]
 
 [node name="ground2" parent="Ground" instance=ExtResource("5_qiyn4")]
-transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 0, 0, 0)
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_cictd")
+
+[node name="Buildings" type="Node3D" parent="."]
+
+[node name="bridge-straight-pillar2" parent="Buildings" instance=ExtResource("6_dwgkh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.123928, 0, -4.36262)
+
+[node name="bridge-straight2" parent="Buildings" instance=ExtResource("7_achdq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.79338, 0, -13.3757)
+
+[node name="ground-hills2" parent="Buildings" instance=ExtResource("8_poxbt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16)
+
+[node name="flag-banner-long2" parent="Buildings" instance=ExtResource("9_2f0s5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.328, 6.55651e-07, -10.2086)
+
+[node name="siege-ballista2" parent="Buildings" instance=ExtResource("9_4plih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 8)
+
+[node name="tower-hexagon-mid2" parent="Buildings" instance=ExtResource("10_kudaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 16)
+
+[node name="tower-hexagon-base2" parent="Buildings" instance=ExtResource("11_axn8c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 16)
+
+[node name="tower-hexagon-roof2" parent="Buildings" instance=ExtResource("12_4lfrf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 16)
+
+[node name="tower-hexagon-top2" parent="Buildings" instance=ExtResource("13_ubaej")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 16)
+
+[node name="tower-hexagon-top-wood2" parent="Buildings" instance=ExtResource("14_qe4jf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 12)
