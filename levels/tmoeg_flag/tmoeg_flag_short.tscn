@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d3qieeacd80n0"]
+
+[ext_resource type="Texture2D" uid="uid://cob7eaxbmx2io" path="res://levels/tmoeg_flag/dots.png" id="1_vaxlt"]
+[ext_resource type="PackedScene" uid="uid://b1gb7nhbh4kfa" path="res://addons/kenney_castle-kit/flag-banner-short.glb" id="2_o71ry"]
+
+[node name="TmoegFlagShort" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(-1.09278e-08, 0, -0.25, 0, 0.25, 0, 0.25, 0, -1.09278e-08, -0.0188609, 4.85853, 0)
+texture = ExtResource("1_vaxlt")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0251225, 2.30652, 0)
+texture_filter = 5
+text = "T
+M
+O
+E
+G"
+font_size = 100
+
+[node name="flag-banner-short2" parent="." instance=ExtResource("2_o71ry")]
